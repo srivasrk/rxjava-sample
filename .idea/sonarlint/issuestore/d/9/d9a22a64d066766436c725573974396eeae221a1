@@ -1,0 +1,19 @@
+
+\squid:S1854">Remove this useless assignment to local variable "observable".(áåí 8ê­Äğ,
+V
+squid:S106+"9Replace this use of System.out or System.err by a logger.(ÖËêê8…®Äğ,
+V
+squid:S1060"9Replace this use of System.out or System.err by a logger.(º¼¶İ8õƒ°Äğ,
+[
+squid:S1064"9Replace this use of System.out or System.err by a logger.(©€ìŠùÿÿÿÿ8Ç¡ÚÃğ,
+Rsquid:S1481"5Remove this unused "stringObservable" local variable.(ÍÁu8ÕŠÄğ,
+Msquid:S1481"/Remove this unused "observable" local variable.(áåí 8ê­Äğ,
+Psquid:S1481&"-Remove this unused "interval" local variable.(ÁÕƒ ıÿÿÿÿ8Ñé«Äğ,
+_squid:UselessImportCheck"4Remove this unused import 'java.lang.reflect.Array'.(‡¡É˜8ê­Äğ,
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(˜£™Ôúÿÿÿÿ8ÕŠÄğ,
+_squid:S1854&"<Remove this useless assignment to local variable "interval".(ÁÕƒ ıÿÿÿÿ8Ñé«Äğ,
+[squid:S3878"8Remove this array creation and simply pass the elements.(ÌéÖûÿÿÿÿ8ê­Äğ,
+[
+squid:S106*"9Replace this use of System.out or System.err by a logger.(©ÌÃ€şÿÿÿÿ8©­¬Äğ,
+asquid:S1854"DRemove this useless assignment to local variable "stringObservable".(ÍÁu8ÕŠÄğ,

@@ -1,8 +1,7 @@
 package com.rahul;
 
 import io.reactivex.Observable;
-
-import java.lang.reflect.Array;
+import io.reactivex.schedulers.Schedulers;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -38,10 +37,34 @@ public class Main {
         Observable interval = Observable.interval(100, TimeUnit.MILLISECONDS);
 
         // Consuming observables
-
         integerObservable.subscribe(intVal -> System.out.println(intVal + " "));
         System.out.println("Using static method reference");
         integerObservable.subscribe(Main::printObservable);
+
+        // Filter out values than aren't greater than 4
+        System.out.println("\nAfter Filter:");
+        integerObservable.filter(integer -> integer > 4).subscribe(Main::printObservable);
+
+        // Map each value to the square of that value
+        System.out.println("\nAfter Map:");
+        integerObservable.map(integer -> Math.multiplyExact(integer, integer)).subscribe(Main::printObservable);
+
+        //Custom Observer
+        System.out.println("\nUsing ConsolePrintObserver");
+        integerObservable.subscribe(new ConsolePrintObserver());
+
+        // Using new thread scheduler
+        System.out.println("Using new thread scheduler");
+        integerObservable.unsubscribeOn(Schedulers.newThread()).subscribe(new ConsolePrintObserver());
+
+        // Use it all in one statement
+        System.out.println("Bring it all together");
+        integerObservable
+                .filter(v -> v > 4)
+                .map(v -> Math.multiplyExact(v, v))
+                .unsubscribeOn(Schedulers.newThread())
+                .subscribe(new ConsolePrintObserver());
+
     }
 
     private static <T>void printObservable(T val) {
